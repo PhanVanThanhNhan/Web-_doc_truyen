@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Admin | Xóa tác giả</title>
+  <link rel="icon" type="image/x-icon" href="/dist/img/favicon.png">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="../../bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <header class="main-header">
+        <a href="../../index.html" class="logo">
+          <span class="logo-mini"><img src="../../dist/img/favicon.png" alt="" width="50px"></span>
+          <span class="logo-lg"><b>Phoenix</b>Maganga</span>
+        </a>
+        <nav class="navbar navbar-static-top">
+          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+    
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <span class="hidden-xs">19t12122@husc.edu.vn</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="user-header">
+                    <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+    
+                    <p>
+                      19t12122@husc.edu.vn
+                    </p>
+                  </li>
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="#" class="btn btn-default btn-flat">Thoát</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <aside class="main-sidebar">
+        <section class="sidebar">
+          <ul class="sidebar-menu" data-widget="tree">
+            <li class="active treeview">
+                <a href="#">
+                    <i class="fa fa-database"></i>
+                    <span>Quản lý dữ liệu</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="../Comic/index.html">Quản lý truyện</a></li>
+                    <li><a href="../List/index.html">Quản lý danh mục</a></li>
+                    <li><a href="../Author/index.html">QUản lý tác giả</a></li>
+                    <li>
+                      <a href="../User/index.html">Quản lý người đọc</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span>Thống kê báo cáo</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                </ul>
+            </li>
+    
+        </ul>
+      </section>
+      </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <h1>
+        Xóa truyện
+      </h1>
+    </section>
+    <section class="content">
+      <div class="box box-prymari">
+        <div class="box-body">
+            <form class="form-horizontal" action="~/customer/delete/@Model.CustomerID" method="post">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Tên tác giả: </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">Oda Eiichiro</p>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Ngày sinh: </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">1/1/1975</p>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Quốc tịch: </label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static">Nhật bản</p>
+                    </div>
+                </div>
+
+ 
+    
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="fa fa-remove"></i>Đồng ý xóa
+                            </button>
+                        <a class="btn btn-warning" href="./index.html">
+                            <i class="fa fa-ban"></i>Quay lại
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="box-footer">
+        </div>
+    </div>
+    </section>
+  </div>
+
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.0
+    </div>
+    <img src="../../dist/img/favicon.png" alt="" width="20px">
+    <strong>Copyright &copy;<a href="#">phoenixManga@gmail.com</a>.</strong> All rights
+    reserved.
+  </footer>
+
+
+</div>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
+</body>
+</html>

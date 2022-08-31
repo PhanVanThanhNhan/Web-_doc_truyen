@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin | Quản lý truyện</title>
+    <link rel="icon" type="image/x-icon" href="/dist/img/favicon.png">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="../../plugins/iCheck/all.css">
+    <link rel="stylesheet" href="../../bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+    <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
+    <link rel="stylesheet" href="../../bower_components/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  </head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header" style="">
+    <a href="../../index.html" class="logo">
+      <!-- <span class="logo-mini"><b>P</b>MG</span> -->
+      <span class="logo-mini"><img src="../../dist/img/favicon.png" alt="" width="50px"></span>
+      <span class="logo-lg"><b>Phoenix</b>Maganga</span>
+    </a>
+    <nav class="navbar navbar-static-top">
+      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">19t12122@husc.edu.vn</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="user-header">
+                <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <p>
+                  19t12122@husc.edu.vn
+                </p>
+              </li>
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Đổi mật khẩu</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Thoát</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <aside class="main-sidebar">
+    <section class="sidebar">
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="active treeview">
+            <a href="#">
+                <i class="fa fa-database"></i>
+                <span>Quản lý dữ liệu</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+                <li><a href="../../pages/Comic/index.html">Quản lý truyện</a></li>
+                <li><a href="../List/index.html">Quản lý danh mục</a></li>
+                <li><a href="../Author/index.html">QUản lý tác giả</a></li>
+                <li>
+                  <a href="../User/index.html">Quản lý người đọc</a>
+                </li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+                <i class="fa fa-bar-chart-o"></i>
+                <span>Thống kê báo cáo</span>
+                <span class="pull-right-container">
+                    <i class="fa fa-angle-left pull-right"></i>
+                </span>
+            </a>
+            <ul class="treeview-menu">
+            </ul>
+        </li>
+
+    </ul>
+  </section>
+  </aside>
+
+  <div class="content-wrapper">
+    <section class="content-header">
+      <form id="searchInput">
+        <div class="row">
+          <div class="col-sm-1">
+              <select class="form-control">
+                <option>3</option>
+                <option>6</option>
+                <option>9</option>
+                <option>12</option>
+              </select>
+          </div>
+          <div class="col-sm-11">
+                <div class="input-group">
+                    <input type="text" name="searchValue"
+                           class="form-control"
+                           placeholder="Nhập tên truyện cần tìm" autofocus>
+                    <span class="input-group-btn">
+                        <button type="submit" id="search-btn" class="btn btn-flat btn-info">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <a href="../Comic/create.html"
+                           class="btn btn-flat btn-primary"
+                           style="margin-left:5px;">
+                            <i class="fa fa-plus"></i> Thêm truyện
+                        </a>
+                    </span>
+                </div>
+          </div>
+        </div>
+      </form>
+        <div class="row">
+        <!--begin content commic  -->
+        <div class="col-sm-4" style="margin-top: 10px;">
+              <div class="box box-primary">
+                  <div class="box-header with-border">
+                      <h3 class="box-title">One Piece</h3>
+                      <div class="box-tools pull-right">
+                          <a class="btn btn-box-tool" href="./edit.html">
+                              <i class="fa fa-edit text-primary"></i>
+                          </a>
+                          <a class="btn btn-box-tool" href="./delete.html">
+                              <i class="fa fa-trash text-danger"></i>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="box-body">
+                      <div class="row">
+                          <div class="col-sm-4">
+                              <img class="profile-user-img img-responsive img-bordered"  src="../../dist/img/one-piece.jpg">
+                          </div>
+                          <div class="col-sm-8">
+                              <ul class="list-group list-group-unbordered">
+                                  <li class="list-group-item">
+                                      <label>Tên truyện:</label> <span>one piece</span>
+                                  </li>
+                                  <li class="list-group-item">
+                                      <label>Tác giả: </label> <span>Oda Eiichiro</span>
+                                  </li>
+                                  <li class="list-group-item">
+                                    <label>Thể loại: </label> <span>Hành động, phiêu lưu</span>
+                                  </li>
+                                  <li class="list-group-item">
+                                    <label>Tình trạng: </label> <span>Đang cập nhật</span>
+                                  </li>
+                                  <li class="list-group-item">
+                                    <label>Số lượt xem: </label> <span>25893</span>
+                                  </li>
+                                  <li class="list-group-item">
+                                    <label>Lượt theo giỏi: </label> <span>12089</span>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-sm-12 text-justify" style="height:120px; overflow-y:auto">
+                              <span>One Piece là bộ truyện tranh dành cho thiếu niên của tác giả nổi tiếng Oda Eiichiro. Bộ manga này được chuyển thể thành một series anime nhiều tập hài hước, đặc sắc. Phim Đảo Hải Tặc mở đầu câu chuyện bằng cảnh xử tử vua hải tặc Gol D. Roger. Trước khi chết ông đã tiết lộ rằng mình có một kho báu...</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>  
+        <!--end content commic  -->
+
+        <!--begin content commic  -->
+        <div class="col-sm-4" style="margin-top: 10px;">
+                  <div class="box box-primary">
+                      <div class="box-header with-border">
+                          <h3 class="box-title">One Piece</h3>
+                          <div class="box-tools pull-right">
+                              <a class="btn btn-box-tool" href="./edit.html">
+                                  <i class="fa fa-edit text-primary"></i>
+                              </a>
+                              <a class="btn btn-box-tool" href="./delete.html">
+                                  <i class="fa fa-trash text-danger"></i>
+                              </a>
+                          </div>
+                      </div>
+                      <div class="box-body">
+                          <div class="row">
+                              <div class="col-sm-4">
+                                  <img class="profile-user-img img-responsive img-bordered"  src="../../dist/img/one-piece.jpg">
+                              </div>
+                              <div class="col-sm-8">
+                                  <ul class="list-group list-group-unbordered">
+                                      <li class="list-group-item">
+                                          <label>Tên truyện:</label> <span>one piece</span>
+                                      </li>
+                                      <li class="list-group-item">
+                                          <label>Tác giả: </label> <span>Oda Eiichiro</span>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Thể loại: </label> <span>Hành động, phiêu lưu</span>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Tình trạng: </label> <span>Đang cập nhật</span>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Số lượt xem: </label> <span>25893</span>
+                                      </li>
+                                      <li class="list-group-item">
+                                        <label>Lượt theo giỏi: </label> <span>12089</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-sm-12 text-justify" style="height:120px; overflow-y:auto">
+                                  <span>One Piece là bộ truyện tranh dành cho thiếu niên của tác giả nổi tiếng Oda Eiichiro. Bộ manga này được chuyển thể thành một series anime nhiều tập hài hước, đặc sắc. Phim Đảo Hải Tặc mở đầu câu chuyện bằng cảnh xử tử vua hải tặc Gol D. Roger. Trước khi chết ông đã tiết lộ rằng mình có một kho báu...</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+        </div>  
+        <!--end content commic  -->
+        
+        <!--begin content commic  -->
+        <div class="col-sm-4" style="margin-top: 10px;">
+          <div class="box box-primary">
+              <div class="box-header with-border">
+                  <h3 class="box-title">One Piece</h3>
+                  <div class="box-tools pull-right">
+                      <a class="btn btn-box-tool" href="./edit.html">
+                          <i class="fa fa-edit text-primary"></i>
+                      </a>
+                      <a class="btn btn-box-tool" href="./delete.html">
+                          <i class="fa fa-trash text-danger"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="box-body">
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <img class="profile-user-img img-responsive img-bordered"  src="../../dist/img/one-piece.jpg">
+                      </div>
+                      <div class="col-sm-8">
+                          <ul class="list-group list-group-unbordered">
+                              <li class="list-group-item">
+                                  <label>Tên truyện:</label> <span>one piece</span>
+                              </li>
+                              <li class="list-group-item">
+                                  <label>Tác giả: </label> <span>Oda Eiichiro</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Thể loại: </label> <span>Hành động, phiêu lưu</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Tình trạng: </label> <span>Đang cập nhật</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Số lượt xem: </label> <span>25893</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Lượt theo giỏi: </label> <span>12089</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12 text-justify" style="height:120px; overflow-y:auto">
+                          <span>One Piece là bộ truyện tranh dành cho thiếu niên của tác giả nổi tiếng Oda Eiichiro. Bộ manga này được chuyển thể thành một series anime nhiều tập hài hước, đặc sắc. Phim Đảo Hải Tặc mở đầu câu chuyện bằng cảnh xử tử vua hải tặc Gol D. Roger. Trước khi chết ông đã tiết lộ rằng mình có một kho báu...</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>  
+        <!--end content commic  -->         
+        
+        <!--begin content commic  -->
+        <div class="col-sm-4" style="margin-top: 10px;">
+          <div class="box box-primary">
+              <div class="box-header with-border">
+                  <h3 class="box-title">One Piece</h3>
+                  <div class="box-tools pull-right">
+                      <a class="btn btn-box-tool" href="./edit.html">
+                          <i class="fa fa-edit text-primary"></i>
+                      </a>
+                      <a class="btn btn-box-tool" href="./delete.html">
+                          <i class="fa fa-trash text-danger"></i>
+                      </a>
+                  </div>
+              </div>
+              <div class="box-body">
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <img class="profile-user-img img-responsive img-bordered"  src="../../dist/img/one-piece.jpg">
+                      </div>
+                      <div class="col-sm-8">
+                          <ul class="list-group list-group-unbordered">
+                              <li class="list-group-item">
+                                  <label>Tên truyện:</label> <span>one piece</span>
+                              </li>
+                              <li class="list-group-item">
+                                  <label>Tác giả: </label> <span>Oda Eiichiro</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Thể loại: </label> <span>Hành động, phiêu lưu</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Tình trạng: </label> <span>Đang cập nhật</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Số lượt xem: </label> <span>25893</span>
+                              </li>
+                              <li class="list-group-item">
+                                <label>Lượt theo giỏi: </label> <span>12089</span>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-12 text-justify" style="height:120px; overflow-y:auto">
+                          <span>One Piece là bộ truyện tranh dành cho thiếu niên của tác giả nổi tiếng Oda Eiichiro. Bộ manga này được chuyển thể thành một series anime nhiều tập hài hước, đặc sắc. Phim Đảo Hải Tặc mở đầu câu chuyện bằng cảnh xử tử vua hải tặc Gol D. Roger. Trước khi chết ông đã tiết lộ rằng mình có một kho báu...</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>  
+        <!--end content commic  -->    
+      </div>
+  </section>
+  <div class="box-footer text-center">
+    <ul class="pagination">
+      <li><a href="#">1</a></li>
+      <li class="active"><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+  </div>
+</div>
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.0
+    </div>
+    <img src="../../dist/img/favicon.png" alt="" width="20px">
+    <strong>Copyright &copy;<a href="#">phoenixManga@gmail.com</a>.</strong> All rights
+    reserved.
+  </footer>
+</div>
+
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../../plugins/iCheck/icheck.min.js"></script>
+<script src="../../dist/js/adminlte.min.js"></script>
+</body>
+</html>
